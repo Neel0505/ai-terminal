@@ -4,7 +4,7 @@ const crypto = require("crypto");
 
 function getSystemContext() {
   const platform = os.platform();
-  if (platform === "win32") return { os: "Windows", shell: "PowerShell or CMD", packageManagers: "winget (preferred), pip, npm", notes: "Use winget for apps, pip for Python packages, npm for Node." };
+  if (platform === "win32") return { os: "Windows", shell: "PowerShell", packageManagers: "winget (preferred), pip, npm", notes: "Use winget for apps, pip for Python packages, npm for Node. CRITICAL: PowerShell does NOT support &&. Use semicolons (;) to chain commands. Example: npm create react-app myapp ; cd myapp ; npm install", separator: ";" };
   if (platform === "darwin") return { os: "macOS", shell: "zsh", packageManagers: "brew, pip3, npm", notes: "Use brew for apps, pip3 for Python, npm for Node." };
   return { os: "Linux", shell: "bash", packageManagers: "apt, pip3, npm", notes: "Use apt for system packages, pip3 for Python, npm for Node." };
 }
@@ -28,7 +28,7 @@ async function translateToCommand(input, apiKey) {
   return callGroq(
     `Convert natural language to exact shell commands for ${sys.os}.
 Package managers: ${sys.packageManagers}. ${sys.notes}
-Rules: Reply with ONLY the command. No explanation, no markdown, no backticks. Use && for multiple commands. If unsafe reply ERROR: <reason>.
+Rules: Reply with ONLY the command. No explanation, no markdown, no backticks. On Windows/PowerShell use semicolons (;) to chain commands NOT &&. On Mac/Linux use &&. If unsafe reply ERROR: <reason>.
 Examples: install python → winget install Python.Python.3 | install react → npm install react | create folder myapp → mkdir myapp | install git → winget install Git.Git`,
     input, apiKey
   );
