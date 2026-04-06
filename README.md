@@ -111,4 +111,4 @@ MIT — feel free to use, modify, and share.
 
 ---
 
-Made with ❤️ by [Neel Parikh](https://github.com/Neel0505)
+Made by [Neel Parikh](https://github.com/Neel0505)
