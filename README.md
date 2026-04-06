@@ -110,5 +110,7 @@ Then open in VS Code and press **F5** to launch the extension in development mod
 MIT — feel free to use, modify, and share.
 
 ---
+## 👥 Credits
 
-Made by [Neel Parikh](https://github.com/Neel0505)
+- Idea by [Vaibhav Rathod](https://github.com/compiler041)
+- Made by [Neel Parikh](https://github.com/Neel0505)
