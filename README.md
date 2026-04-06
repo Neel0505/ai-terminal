@@ -3,7 +3,7 @@
 > Type plain English. AI runs the terminal command for you.
 
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/NeelParikh.ai-terminal?label=VS%20Code%20Marketplace&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=NeelParikh.ai-terminal)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/NeelParikh.ai-terminal)](https://marketplace.visualstudio.com/items?itemName=NeelParikh.ai-terminal)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
