@@ -1,0 +1,85 @@
+{
+  "name": "ai-terminal",
+  "displayName": "AI Terminal",
+  "description": "Type plain English — AI runs the terminal command for you",
+  "version": "2.0.0",
+  "publisher": "NeelParikh",
+  "icon": "media/icon.png",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./src/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ai-terminal-sidebar",
+          "title": "AI Terminal",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "ai-terminal-sidebar": [
+        {
+          "type": "webview",
+          "id": "aiTerminal.panel",
+          "name": "AI Terminal"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ai-terminal.run",
+        "title": "AI Terminal: Run Command"
+      },
+      {
+        "command": "ai-terminal.openPanel",
+        "title": "AI Terminal: Open Panel"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "ai-terminal.run",
+          "group": "navigation",
+          "when": "editorFocus"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "ai-terminal.run",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "ai-terminal.run",
+        "key": "ctrl+shift+;",
+        "mac": "cmd+shift+;"
+      }
+    ],
+    "configuration": {
+      "title": "AI Terminal",
+      "properties": {
+        "aiTerminal.groqApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your free Groq API key from console.groq.com"
+        },
+        "aiTerminal.autoRun": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run commands without confirmation (use with caution)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "npx vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0"
+  }
+}
