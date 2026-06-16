@@ -1,99 +1,178 @@
-# 🤖 AI Terminal
+# AI Terminal for VS Code
+Run terminal commands using natural language.
 
-> Type plain English. AI runs the terminal command for you.
+AI Terminal converts plain English instructions into executable terminal commands and runs them using the appropriate tools for your operating system. Whether you're installing software, managing files, working with development tools, or performing routine system tasks, simply describe what you want to do and let AI handle the command generation.
 
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/NeelParikh.ai-terminal?label=VS%20Code%20Marketplace&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=NeelParikh.ai-terminal)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## What is AI Terminal?
+## Overview
 
-AI Terminal is a VS Code extension that lets you control your terminal using plain English — no need to memorize commands.
+AI Terminal brings AI-powered command execution directly into VS Code.
 
-Instead of googling "how to install python on windows", just type **"install python"** and it runs the right command for your operating system automatically.
+Instead of searching for terminal commands, memorizing package manager syntax, or switching between documentation pages, simply describe the task in plain English. AI Terminal understands your request, generates the appropriate command for your environment, and executes it directly from VS Code.
 
----
+Example:
 
-## ✨ Features
+```text
+install python
+```
 
-- 🧠 **Natural language to terminal commands** — describe what you want, AI figures out the exact command
-- 🖥️ **OS aware** — automatically uses the right package manager for Windows (`winget`), macOS (`brew`), or Linux (`apt`)
-- 📋 **Command history** — see all your past AI commands in the sidebar
-- ↺ **Re-run** — instantly re-run any previous command
-- ⟲ **Undo** — AI figures out how to reverse any command you've run
-- ⚡ **Right-click menu** — trigger AI Terminal from anywhere in VS Code
-- ⌨️ **Keyboard shortcut** — `Ctrl+Shift+;` (or `Cmd+Shift+;` on Mac)
+AI Terminal automatically determines the correct command based on your operating system.
 
 ---
 
-## 🚀 Getting Started
+## Features
 
-### 1. Install the extension
-Search **"AI Terminal"** in the VS Code Extensions panel (`Ctrl+Shift+X`) or install from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=NeelParikh.ai-terminal).
+### Natural Language Commands
 
-### 2. Get a free Groq API key
-1. Go to [console.groq.com](https://console.groq.com)
-2. Sign up free (Google login works)
-3. Click **API Keys** → **Create API Key**
-4. Copy the key
+Describe tasks in plain English and let AI generate the correct terminal command.
 
-### 3. Start using it
-- Click the **AI Terminal icon** in the left sidebar
-- Paste your Groq API key when prompted (saved automatically)
-- Type what you want to do and hit **▶ Run**
+### Operating System Aware
+
+Automatically adapts commands to your platform:
+
+- **Windows** → `winget`
+- **macOS** → `brew`
+- **Linux** → `apt`
+
+### Command History
+
+View and manage previously executed AI-generated commands from the sidebar.
+
+### Re-run Commands
+
+Quickly execute any command from your history with a single click.
+
+### Undo Actions
+
+Generate reverse commands to help revert previously executed operations.
+
+### Seamless VS Code Integration
+
+- Dedicated sidebar interface
+- Context menu support
+- Native terminal execution
+- Keyboard shortcuts for quick access
+
+### Developer Productivity
+
+Reduce time spent searching for commands and focus on getting work done.
 
 ---
 
-## 💡 Examples
+## Getting Started
 
-| You type | AI runs |
-|---|---|
+### 1. Install the Extension
+
+Install **AI Terminal** from the VS Code Marketplace.
+
+Search for **"AI Terminal"** in the Extensions panel (`Ctrl+Shift+X`) or install directly from:
+
+https://marketplace.visualstudio.com/items?itemName=NeelParikh.ai-terminal
+
+---
+
+### 2. Create a Groq API Key
+
+AI Terminal uses Groq for command generation.
+
+1. Visit https://console.groq.com
+2. Sign in or create an account
+3. Navigate to **API Keys**
+4. Select **Create API Key**
+5. Copy the generated key
+
+---
+
+### 3. Start Using AI Terminal
+
+1. Open the **AI Terminal** panel from the VS Code sidebar
+2. Enter your Groq API key
+3. Describe the task you want to perform
+4. Click **Run**
+
+Example:
+
+```text
+install git
+```
+
+AI Terminal will generate and execute the appropriate command for your operating system.
+
+---
+
+## Example Commands
+
+| You Type | AI Executes |
+|-----------|-------------|
 | `install python` | `winget install Python.Python.3` |
 | `install nodejs` | `winget install OpenJS.NodeJS` |
 | `install pandas` | `pip install pandas` |
 | `install react` | `npm install react` |
 | `create folder called myapp` | `mkdir myapp` |
 | `show all running processes` | `tasklist` |
-| `whats my ip address` | `ipconfig` |
+| `what's my ip address` | `ipconfig` |
 | `install git` | `winget install Git.Git` |
+
+> Commands may vary depending on your operating system and environment.
 
 ---
 
-## 🖥️ OS Support
+## Supported Platforms
 
-| OS | Package Manager |
-|---|---|
+| Platform | Supported Tools |
+|-----------|----------------|
 | Windows | `winget`, `pip`, `npm` |
 | macOS | `brew`, `pip3`, `npm` |
 | Linux | `apt`, `pip3`, `npm` |
 
 ---
 
-## ⚙️ Settings
+## Keyboard Shortcut
 
-Go to **Settings → Extensions → AI Terminal**:
+| Platform | Shortcut |
+|-----------|----------|
+| Windows / Linux | `Ctrl + Shift + ;` |
+| macOS | `Cmd + Shift + ;` |
+
+---
+
+## Configuration
+
+Navigate to:
+
+**Settings → Extensions → AI Terminal**
 
 | Setting | Description | Default |
-|---|---|---|
-| `aiTerminal.groqApiKey` | Your Groq API key | `""` |
-| `aiTerminal.autoRun` | Skip confirmation dialog and run immediately | `false` |
+|----------|-------------|----------|
+| `aiTerminal.groqApiKey` | Groq API key used for command generation | `""` |
+| `aiTerminal.autoRun` | Automatically execute commands without confirmation | `false` |
 
 ---
 
-## 🔑 Why Groq?
+## Powered by Groq
 
-AI Terminal uses [Groq](https://groq.com) as its AI backend because:
-- ✅ **Free tier** — 14,400 requests/day at no cost
-- ✅ **Fast** — runs on custom hardware, responses in under a second
-- ✅ **Works globally** — no regional restrictions
+AI Terminal uses Groq to translate natural language into executable terminal commands.
+
+Benefits include:
+
+- Fast response times
+- Reliable inference performance
+- Global availability
+- Generous free-tier access for developers
+
+To use AI Terminal, you'll need a Groq API key, which can be created for free through the Groq Console.
+
+> API limits, pricing, and availability are subject to change based on Groq policies.
 
 ---
 
-## 🛠️ Contributing
+## Development
 
-Contributions are welcome! Here's how to run it locally:
+Run the extension locally:
 
 ```bash
 git clone https://github.com/Neel0505/ai-terminal.git
@@ -101,16 +180,35 @@ cd ai-terminal
 npm install
 ```
 
-Then open in VS Code and press **F5** to launch the extension in development mode.
+Open the project in VS Code and press:
+
+```text
+F5
+```
+
+to launch an Extension Development Host.
 
 ---
 
-## 📄 License
+## Contributing
 
-MIT — feel free to use, modify, and share.
+Contributions, feature requests, and bug reports are welcome.
+
+To contribute:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
 ---
-## 👥 Credits
 
-- Idea by [Vaibhav Rathod](https://github.com/compiler041)
-- Made by [Neel Parikh](https://github.com/Neel0505)
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Author
+
+Created and maintained by **Neel Parikh**.
